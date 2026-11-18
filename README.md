@@ -1,4 +1,4 @@
-# A Practical Computer Science Primer
+# Practical Computer Science Primer
 
 ### Audience
 
@@ -17,3 +17,7 @@ The second (Chapters 9-15) and third parts (Chapters 16-21) use C++, and are unf
 ### License
 
 The text and software is &copy;2026 Richard Spencer and may be copied under the terms of the Creative Commons license.
+
+### Credits
+
+The majority of the text, graphics, code and exercises are sourced from Google AI Studio.
