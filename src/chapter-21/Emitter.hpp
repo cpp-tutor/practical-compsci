@@ -25,8 +25,6 @@ public:
         emit_line("// Target: Modern C++23");
         emit_line("// =============================================================================\n");
         emit_line("#include <iostream>");
-        emit_line("#include <any>");
-        emit_line("#include <vector>");
         emit_line("#include <string>\n");
         emit_line("int main() {");
         indent();

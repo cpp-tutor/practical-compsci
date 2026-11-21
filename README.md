@@ -14,6 +14,8 @@ The second (Chapters 9-15) and third parts (Chapters 16-21) use C++, and are unf
 
 * **2026-11-17 Version 1.0**: Initial upload of first version. Issues will be actioned but be aware that the content of the Jupyter notebooks is auto-generated from non-hosted sources.
 
+* **2026-11-21 Version 1.1**: Many improvements, including to figure/equation/table numbering, quotes and text.
+
 ### License
 
 The text and software is &copy;2026 Richard Spencer and may be copied under the terms of the Creative Commons license.

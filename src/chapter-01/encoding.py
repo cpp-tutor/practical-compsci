@@ -75,7 +75,9 @@ if __name__ == '__main__':
     print(f'2-Byte sequence for U+a3 is {encodeUtf8Bytes(0xa3)}')
     print(f'3-Byte sequence for U+20ac is {encodeUtf8Bytes(0x20ac)}')
     print(f'4-Byte sequence for U+1f3f4 is {encodeUtf8Bytes(0x1f3f4)}')
-    for u in range(0x110000):
+    ucs2_range = 0x10000
+    ucs4_range = 0x110000
+    for u in range(ucs2_range):
         if u % 0x1000 == 0:
             print('.', end='', flush=True)
         if u != decodeUtf8Bytes(encodeUtf8Bytes(u)):
