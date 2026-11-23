@@ -85,12 +85,22 @@ private:
 };
 
 // -----------------------------------------------------------------------------
-// Expression Nodes
+// Expression & Statement Base Nodes (Defined before any concrete AST nodes)
 // -----------------------------------------------------------------------------
+
 class ExprAST : public ASTNode {
 public:
     using ASTNode::ASTNode;
 };
+
+class StmtAST : public ASTNode {
+public:
+    using ASTNode::ASTNode;
+};
+
+// -----------------------------------------------------------------------------
+// Expression Nodes
+// -----------------------------------------------------------------------------
 
 class LiteralExprAST : public ExprAST {
 public:
@@ -193,15 +203,11 @@ private:
     std::vector<std::unique_ptr<ExprAST>> m_arguments;
 };
 
-// Forward declaration for BlockExprAST
-class StmtAST;
-
 class BlockExprAST : public ExprAST {
 public:
     BlockExprAST(SourceLocation loc, 
                  std::vector<std::unique_ptr<StmtAST>> statements,
-                 std::unique_ptr<ExprAST> result_expr);
-    ~BlockExprAST(); // Constructor and destructor cannot be defined inline for Clang with -std=c++23/26
+                 std::unique_ptr<ExprAST> result_expr) : ExprAST(loc), m_statements(std::move(statements)), m_result_expr(std::move(result_expr)) {}
     [[nodiscard]] const std::vector<std::unique_ptr<StmtAST>>& statements() const noexcept { 
         return m_statements; 
     }
@@ -243,16 +249,6 @@ private:
 // -----------------------------------------------------------------------------
 // Statement Nodes
 // -----------------------------------------------------------------------------
-class StmtAST : public ASTNode {
-public:
-    using ASTNode::ASTNode;
-};
-
-BlockExprAST::BlockExprAST(SourceLocation loc, 
-    std::vector<std::unique_ptr<StmtAST>> statements,
-    std::unique_ptr<ExprAST> result_expr)
-     : ExprAST(loc), m_statements(std::move(statements)), m_result_expr(std::move(result_expr)) {}
-BlockExprAST::~BlockExprAST() = default;
 
 class LetStmtAST : public StmtAST {
 public:

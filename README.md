@@ -8,13 +8,15 @@ This set of Jupyter Notebooks is intended to be a self-contained CompSci course 
 
 The first part (Chapters 1-8) uses the Python language to introduce elementary concepts related to the subject. These notebooks use a Python 3 kernel and can be run using the "fast-forward" icon. Alternatively see the full Python sources in `src/chapter-??` and run them using `python3 path/to/demo.py`.
 
-The second (Chapters 9-15) and third parts (Chapters 16-21) use C++, and are unfortunately not yet compatible with any C++ kernel. Again, sources are available and can be run with `cd path/to/chapter-??; ../build.sh`. A C++20 (or newer) compiler is required, along with the `<format>` header.
+The second (Chapters 9-15) and third parts (Chapters 16-21) use C++, and are compatible with a recent Xeus C++ kernel (Chapters 18-21 have been coalesced into one file to be used with this kernel). Sources are available and can be run with `cd path/to/chapter-??; ../build.sh`. A C++20 (or newer) compiler is required, along with the `<format>` header.
 
 ### Version
 
 * **2026-11-17 Version 1.0**: Initial upload of first version. Issues will be actioned but be aware that the content of the Jupyter notebooks is auto-generated from non-hosted sources.
 
 * **2026-11-21 Version 1.1**: Many improvements, including to figure/equation/table numbering, quotes and text.
+
+* **2026-11-23 Version 1.2**: Updates to code to allow compilation with Jupyter kernel xcpp23. Improvements to font matching for figures.
 
 ### License
 

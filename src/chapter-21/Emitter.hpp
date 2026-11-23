@@ -34,7 +34,7 @@ public:
 
         // 3. Emit Main Entry-Point Execution Driver
         if (m_has_main) {
-            emit_line("\nstd::cout << \"[Faberge Runtime] Program terminated with output: \" << main_() << '\\n';\n");
+            emit_line("std::cout << \"[Faberge Runtime] Program terminated with output: \" << main_() << '\\n';\n");
         }
         emit_line("return 0;");
         dedent();
